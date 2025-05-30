@@ -1,0 +1,148 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "项目实战.movie.Main",
+            "projectName": "_first_f737fd7a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "movie.Main",
+            "projectName": "_first_f737fd7a"
+        },
+        {
+            "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "day03.test",
+            "projectName": "_first_f737fd7a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "day03.Main",
+            "projectName": "_first_f737fd7a"
+        },
+        {
+            "type": "java",
+            "name": "javabaen_",
+            "request": "launch",
+            "mainClass": "day02.javabaen_",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "student_1",
+            "request": "launch",
+            "mainClass": "day02.student_1",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "_001",
+            "request": "launch",
+            "mainClass": "day01._001",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "figth_boss",
+            "request": "launch",
+            "mainClass": "day02.figth_boss",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "dynamic_arr",
+            "request": "launch",
+            "mainClass": "day02.dynamic_arr",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "check",
+            "request": "launch",
+            "mainClass": "day02.check",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "guess_num",
+            "request": "launch",
+            "mainClass": "day02.guess_num",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "ez_calc",
+            "request": "launch",
+            "mainClass": "day02.ez_calc",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "my_while",
+            "request": "launch",
+            "mainClass": "day02.my_while",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "my_for",
+            "request": "launch",
+            "mainClass": "day02.my_for",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "health_calc",
+            "request": "launch",
+            "mainClass": "health_calc",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "_003运算符",
+            "request": "launch",
+            "mainClass": "_003运算符",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "encoding": "UTF-8"
+        },
+        {
+            "type": "java",
+            "name": "_001",
+            "request": "launch",
+            "mainClass": "_001",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "_002输入输出",
+            "request": "launch",
+            "mainClass": "_002输入输出",
+            "projectName": "_first_3ac552fd"
+        },
+        {
+            "type": "java",
+            "name": "贪吃蛇",
+            "request": "launch",
+            "mainClass": "贪吃蛇",
+            "projectName": "_first_3ac552fd"
+        }
+    ]
+}
