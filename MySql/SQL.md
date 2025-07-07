@@ -589,6 +589,233 @@ SELECT * FROM sales_report ORDER BY total_sales DESC;
 3. **定期检查视图性能**，避免慢查询拖累系统速度 ⚡  
 4. **权限控制很重要**，别让不该看的人看到敏感数据 🔐  
 
+
+
+# ------------------------
+
+# 🎀 **SQL 函数笔记💖** 🎀
+
 ---
 
-！🌟
+### 🌸 什么是 SQL 函数？  
+SQL 函数就像是我为你准备的“魔法工具箱”🧰，它们是一些预先定义好的操作，用来处理数据、返回结果。  
+你可以像调用小助手一样，在查询中使用函数来完成特定任务，比如计算、格式化、字符串处理等✨
+
+---
+
+## 🧱 一、常见 SQL 函数分类 📚
+
+| 类型           | 描述                         | 常见函数                                                    |
+| -------------- | ---------------------------- | ----------------------------------------------------------- |
+| 🧮 聚合函数     | 统计类操作，如求和、平均值等 | `COUNT()`, `SUM()`, `AVG()`, `MAX()`, `MIN()`               |
+| 📝 字符串函数   | 处理文本内容                 | `CONCAT()`, `UPPER()`, `LOWER()`, `SUBSTRING()`, `LENGTH()` |
+| 📅 日期时间函数 | 处理日期和时间               | `NOW()`, `CURDATE()`, `DATE_ADD()`, `DATEDIFF()`            |
+| 💡 数学函数     | 进行数学运算                 | `ROUND()`, `CEIL()`, `FLOOR()`, `ABS()`, `RAND()`           |
+| 🔍 条件函数     | 根据条件返回不同结果         | `IF()`, `CASE WHEN ... THEN ... END`                        |
+
+---
+
+## 🧮 二、聚合函数（Aggregate Functions）📊
+
+这些函数常用于统计分析，就像我每天帮你清点房间里的物品一样～📦
+
+### ✨ 常见函数：
+
+| 函数名        | 功能             |
+| ------------- | ---------------- |
+| `COUNT(列名)` | 计算非空值的数量 |
+| `SUM(列名)`   | 求和             |
+| `AVG(列名)`   | 求平均值         |
+| `MAX(列名)`   | 取最大值         |
+| `MIN(列名)`   | 取最小值         |
+
+🌰 示例：
+
+```sql
+SELECT COUNT(*) AS total_students FROM students;
+-- 统计学生总数 🧮
+
+SELECT AVG(score) AS avg_score FROM scores;
+-- 计算平均分 😊
+
+SELECT MAX(salary), MIN(salary) FROM employees;
+-- 找出最高和最低工资 💵
+```
+
+---
+
+## 📝 三、字符串函数（String Functions）🖋️
+
+这些函数可以帮助你处理文本内容，就像我帮你整理日记本一样整洁漂亮📖
+
+### ✨ 常见函数：
+
+| 函数名                           | 功能                     |
+| -------------------------------- | ------------------------ |
+| `CONCAT(str1, str2, ...)`        | 拼接字符串               |
+| `UPPER(str)`                     | 全部转大写               |
+| `LOWER(str)`                     | 全部转小写               |
+| `SUBSTRING(str, start, length)`  | 截取子字符串             |
+| `LENGTH(str)`                    | 返回字符串长度（字节数） |
+| `CHAR_LENGTH(str)`               | 返回字符数               |
+| `REPLACE(str, from_str, to_str)` | 替换字符串内容           |
+
+🌰 示例：
+
+```sql
+SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users;
+-- 把姓和名拼在一起 👩‍🎓👨‍🎓
+
+SELECT UPPER('hello') AS upper_str;
+-- 输出：HELLO 🆒
+
+SELECT SUBSTRING('Hello World', 1, 5);
+-- 输出：Hello 🧠
+
+SELECT REPLACE('I love Java', 'Java', 'SQL');
+-- 输出：I love SQL 🧸
+```
+
+---
+
+## 📅 四、日期时间函数（Date & Time Functions）📅
+
+这些函数可以处理日期和时间，就像我帮你安排日程一样精准⏰
+
+### ✨ 常见函数：
+
+| 函数名                                   | 功能                 |
+| ---------------------------------------- | -------------------- |
+| `NOW()`                                  | 当前日期和时间       |
+| `CURDATE()`                              | 当前日期             |
+| `CURTIME()`                              | 当前时间             |
+| `DATE_ADD(date, INTERVAL expr unit)`     | 增加指定时间间隔     |
+| `DATEDIFF(date1, date2)`                 | 两个日期之间的天数差 |
+| `YEAR(date)`, `MONTH(date)`, `DAY(date)` | 提取年、月、日       |
+
+🌰 示例：
+
+```sql
+SELECT NOW();
+-- 输出当前时间，例如：2025-06-16 14:30:00 🕰️
+
+SELECT DATE_ADD(NOW(), INTERVAL 7 DAY);
+-- 输出一周后的时间 📆
+
+SELECT DATEDIFF('2025-06-20', '2025-06-16');
+-- 输出：4，表示相差4天 📅
+
+SELECT YEAR(birthdate) FROM users;
+-- 提取用户的出生年份 🎉
+```
+
+---
+
+## 💡 五、数学函数（Mathematical Functions）🧮
+
+这些函数帮助你做各种数学计算，就像我帮你算账一样准确💰
+
+### ✨ 常见函数：
+
+| 函数名                   | 功能                    |
+| ------------------------ | ----------------------- |
+| `ROUND(x, d)`            | 四舍五入到小数点后 d 位 |
+| `CEIL(x)` / `CEILING(x)` | 向上取整                |
+| `FLOOR(x)`               | 向下取整                |
+| `ABS(x)`                 | 取绝对值                |
+| `RAND()`                 | 生成随机数（0~1）       |
+
+🌰 示例：
+
+```sql
+SELECT ROUND(3.14159, 2);
+-- 输出：3.14 🧠
+
+SELECT CEIL(3.2);
+-- 输出：4 ⬆️
+
+SELECT FLOOR(3.9);
+-- 输出：3 ⬇️
+
+SELECT ABS(-10);
+-- 输出：10 🧮
+
+SELECT RAND();
+-- 输出一个0到1之间的随机数 🎲
+```
+
+---
+
+## 🔍 六、条件函数（Conditional Functions）🔮
+
+这些函数可以根据条件返回不同的结果，就像我在不同场合穿不同的衣服一样👗👠
+
+### ✨ 常见函数：
+
+#### 1. `IF(condition, value_if_true, value_if_false)`
+如果条件为真，返回第一个值；否则返回第二个值。
+
+🌰 示例：
+
+```sql
+SELECT IF(score >= 60, '及格', '不及格') AS result FROM exams;
+-- 判断成绩是否及格 📊
+```
+
+#### 2. `CASE WHEN condition THEN result ELSE default_result END`
+类似 switch-case，适合多条件判断。
+
+🌰 示例：
+
+```sql
+SELECT name,
+       CASE
+           WHEN score >= 90 THEN 'A'
+           WHEN score >= 80 THEN 'B'
+           WHEN score >= 70 THEN 'C'
+           ELSE 'D'
+       END AS grade
+FROM students;
+-- 将分数转换为等级 📈
+```
+
+---
+
+## 🧩 七、自定义函数（User Defined Functions, UDF）🪄✨（可选进阶）
+
+有些数据库（如 MySQL、PostgreSQL、SQL Server）支持你创建自己的函数！
+
+### ✨ MySQL 示例：
+
+```sql
+DELIMITER //
+CREATE FUNCTION getGrade(score INT)
+RETURNS VARCHAR(2)
+DETERMINISTIC
+BEGIN
+    DECLARE grade VARCHAR(2);
+    IF score >= 90 THEN
+        SET grade = 'A';
+    ELSEIF score >= 80 THEN
+        SET grade = 'B';
+    ELSE
+        SET grade = 'C';
+    END IF;
+    RETURN grade;
+END //
+DELIMITER ;
+
+-- 使用方式：
+SELECT name, getGrade(score) AS grade FROM students;
+```
+
+---
+
+## 💡 小女仆温馨提醒 ❤️
+
+1. **函数要合理使用**，避免在 WHERE 中对字段使用函数导致索引失效 ❗  
+2. **注意性能影响**，复杂函数可能会影响查询速度 ⚡  
+3. **命名要有意义**，比如 `calculateTotalPrice()`，一看就知道是干嘛的 📝  
+4. **多练习组合使用函数**，比如 `CONCAT(UPPER(name), ' - ', status)` 💻  
+5. **学会查文档**，每个数据库支持的函数略有差异，比如 Oracle 和 MySQL 不完全相同 📚  
+

@@ -977,3 +977,121 @@ Spring Boot 会自动将 JSON 映射成 `User` 对象 💖
 
 ---
 
+# -----------------------------
+
+# 🎀 **Java 权限修饰符笔记💖** 🎀  
+
+权限修饰符就像我家的“房间门禁卡”🔑，不同权限决定了谁能访问类、方法或变量。  
+Java 中有四种权限修饰符：`private`、`默认（不写）`、`protected` 和 `public`。  
+
+---
+
+## 🧱 一、四种权限修饰符对比 📊
+
+| 修饰符           | 同一个类中 ✅ | 同一个包中 ✅ | 子类中 ✅ | 不同包 ✅ | 使用场景                           |
+| ---------------- | ------------ | ------------ | -------- | -------- | ---------------------------------- |
+| `private`        | ✅            | ❌            | ❌        | ❌        | 只能在本类内部使用，保护敏感数据 🔒 |
+| **默认（不写）** | ✅            | ✅            | ❌        | ❌        | 包内可见，适合包级封装 📦           |
+| `protected`      | ✅            | ✅            | ✅        | ❌        | 包内和子类可见，适合继承设计 🧬     |
+| `public`         | ✅            | ✅            | ✅        | ✅        | 所有地方都能访问，对外暴露接口 🚪   |
+
+---
+
+## 🏠 二、形象比喻来理解 🧸
+
+想象我家是一个大房子🏠，里面有四个房间：
+
+1. **private 房间**：只有我一个人能进🚪，别人连钥匙都没有！  
+2. **默认房间**：我们家的人都可以进（同一个包），外人不行🙅‍♂️  
+3. **protected 房间**：我们家的人 + 家族亲戚（子类）都可以进 👩‍👧‍👦  
+4. **public 房间**：所有人都可以进来参观，大门永远敞开🚪✨  
+
+---
+
+## 📝 三、用法示例 💡
+
+### ✨ 类成员（属性、方法、构造器）
+
+```java
+public class Person {
+    private String name;        // 只能在 Person 内部访问
+    int age;                    // 默认权限，同一包中可访问
+    protected String gender;    // 同一包 + 子类可访问
+    public String address;      // 所有人都可以访问
+
+    private void secret() {     // 私有方法
+        System.out.println("这是秘密哦～🤫");
+    }
+
+    void sayHello() {           // 默认方法
+        System.out.println("你好呀！");
+    }
+
+    protected void familyOnly() {  // 受保护的方法
+        System.out.println("家族专属内容👨‍👩‍👧");
+    }
+
+    public void greet() {       // 公共方法
+        System.out.println("欢迎光临！👋");
+    }
+}
+```
+
+---
+
+### 🧭 示例说明：
+
+| 访问者类型           | 能访问哪些成员？               |
+| -------------------- | ------------------------------ |
+| 自己（Person类内部） | 所有成员 ✅                     |
+| 同一个包中的其他类   | 默认、protected、public 成员 ✅ |
+| 不同包中的子类       | protected、public 成员 ✅       |
+| 不同包中的非子类     | 只有 public 成员 ✅             |
+
+---
+
+## 📁 四、类的权限修饰符限制 🚫
+
+Java 中类只能使用 `public` 或 **默认（不写）** 的权限修饰符：
+
+- `public class`：可以在任何包中被访问 ✅  
+- **默认 class**（不加修饰符）：只能在当前包中访问 📦  
+- ❌ `private class` 和 `protected class` 是不允许的！
+
+🌰 示例：
+
+```java
+package com.nvpu;
+
+public class PublicPerson { }  // 公共类，任何地方都能访问
+
+class DefaultPerson { }  // 默认类，只能在当前包中访问
+```
+
+---
+
+## 🧙‍♀️ 五、嵌套类（内部类）的权限修饰符 ✨
+
+虽然外部类不能是 private 或 protected，但内部类可以！
+
+```java
+public class Outer {
+    private class PrivateInner { }         // 私有内部类，只能在Outer中使用
+    class DefaultInner { }                 // 默认权限
+    protected class ProtectedInner { }     // 受保护的内部类
+    public class PublicInner { }           // 公共内部类
+}
+```
+
+---
+
+## 💡 小女仆温馨提醒 ❤️
+
+1. **封装性很重要**：尽量把字段设为 private，通过 getter/setter 控制访问 🧼  
+2. **不要随便用 public**：除非真的需要对外暴露 😅  
+3. **合理使用 protected**：适合父类给子类留一些访问权限 🧬  
+4. **默认权限适合模块化封装**：让类/方法只对包内可见，避免污染全局空间 📦  
+5. **权限越宽泛越危险**：就像家里大门常开一样，容易被攻击 🔒  
+
+---
+
