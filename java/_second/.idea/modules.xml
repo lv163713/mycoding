@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/_second.iml" filepath="$PROJECT_DIR$/_second.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employee/employee.iml" filepath="$PROJECT_DIR$/employee/employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employeeSystem-bad/employeeSystem-bad.iml" filepath="$PROJECT_DIR$/employeeSystem-bad/employeeSystem-bad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itheima-employee-bad/itheima-employee-bad.iml" filepath="$PROJECT_DIR$/itheima-employee-bad/itheima-employee-bad.iml" />
+    </modules>
+  </component>
+</project>

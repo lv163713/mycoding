@@ -1,0 +1,4 @@
+[
+  {"id":"E001","name":"张三","gender":"男","position":"经理","salary":8000},
+  {"id":"E002","name":"李四","gender":"女","position":"工程师","salary":6000}
+]
