@@ -4,7 +4,9 @@
 
 ## 项目结构
 
-employee/ └── src/ 
+employee/ 
+
+└── src/ 
 
 ├── dao/ # 数据访问层 
 
